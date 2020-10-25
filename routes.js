@@ -20,13 +20,14 @@ module.exports = function(app) {
     
     // Function for Mobile
     app.post('/user/login', user.loginUser);
-    app.get('/user/videos', videos.getVideos);
+    app.post('/user/register', user.registerUser);
+    app.get('/user/videos', [authJwt.isUser], videos.getVideos);
 
     // Function for Web
     app.post('/merchant/login', user.loginMerchant);
     app.post('/admin/login', user.loginAdmin);
 
-    app.get('/tes_jwt', [authJwt.verifyToken, authJwt.isUser], function(req,res){
+    app.get('/tes_jwt', [authJwt.isUser], function(req,res){
         res.json({message : 'Berhasil tes token'});
     });
 };
