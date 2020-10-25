@@ -5,20 +5,17 @@ const jwt = require("jsonwebtoken");
 
 exports.loginUser = async(param, res) => {
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
-    console.log(param.body);
     var req = param.body;
     await users.loginUser(req.username, req.password, "", res, processLogin);
 };
 
 exports.loginMerchant = async(param, res) => {
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
-    console.log(param.body);
     var req = param.body;
     await users.loginUser(req.username, req.password, "Merchant", res, processLogin);
 };
 
 exports.loginAdmin = async(param, res) => {
-    console.log(param.body);
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
     var req = param.body;
     await users.loginUser(req.username, req.password, "Admin", res, processLogin);

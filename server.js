@@ -4,9 +4,6 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cors = require("cors");
 
-// var corsOptions = { origin: ["https://pito.vercel.app/"] };
-// app.use(cors(corsOptions));
-
 var allowedOrigins = ["https://pito.vercel.app"];
 app.use(cors({
   origin: function(origin, callback){
