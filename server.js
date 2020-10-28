@@ -4,7 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cors = require("cors");
 
-var allowedOrigins = ["https://pito.vercel.app"];
+var allowedOrigins = ["https://main.dwzx0m729367m.amplifyapp.com"];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
