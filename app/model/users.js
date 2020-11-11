@@ -1,6 +1,6 @@
 const { dbmysql } = require('../middlewares');
 const TableUsers = "users";
-const TableUsersRole = "users_roles";
+const TableUsersRole = "user_roles";
 const TableRoles = "roles";
 const TableUserDetails = "user_details";
 
