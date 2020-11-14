@@ -1,6 +1,6 @@
 const { dbmysql } = require('../middlewares');
 const TableUsers = "users";
-const TableUsersRole = "user_roles";
+const TableUsersRole = "users_roles";
 const TableRoles = "roles";
 const TableUserDetails = "user_details";
 
@@ -22,7 +22,7 @@ exports.loginUser = function(username, password, role, res, callback){
             + " INNER JOIN " + TableUsersRole + " as b on a.id = b.userId "
             + " INNER JOIN " + TableRoles + " as c on b.roleId = c.id "
             + " WHERE a.username = '" + username + "' AND a.password = '" + password + "' "
-            + " AND a.isactive = 1 ";
+            + " AND a.isactive = true ";
     if(role != ""){
         que += " AND c.name = '" + role + "'";
     }
