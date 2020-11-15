@@ -4,7 +4,7 @@ const videos = require('./app/controller/videos.ctrl');
 const category = require('./app/controller/category.ctrl');
 const { authJwt } = require("./app/middlewares");
 
-module.exports = function(app) {
+module.exports = function (app) {
     app.use(function (req, res, next) {
         res.header(
             "Access-Control-Allow-Headers",
@@ -15,10 +15,10 @@ module.exports = function(app) {
 
     app.route("/")
         .get((req, res) => {
-            res.json({message : 'Welcome to PITO'});
+            res.json({ message: 'Welcome to PITO' });
         }
-    );
-    
+        );
+
     // Function for Mobile
     app.post('/user/login', user.loginUser);
     app.post('/user/register', user.registerUser);
@@ -34,7 +34,7 @@ module.exports = function(app) {
     app.post('/merchant/login', user.loginMerchant);
     app.post('/admin/login', user.loginAdmin);
 
-    app.get('/tes_jwt', [authJwt.isUser], function(req,res){
-        res.json({message : 'Berhasil tes token'});
+    app.get('/tes_jwt', [authJwt.isUser], function (req, res) {
+        res.json({ message: 'Berhasil tes token' });
     });
 };
