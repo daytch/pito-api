@@ -213,7 +213,7 @@ exports.listMerchant = async (param, res) => {
 function processLogin(err, rtn, res) {
     var dt = {};
     var status = 0;
-
+    
     if (rtn != null) {
         var cnt = rtn.length;
         if (cnt > 0) {
@@ -240,7 +240,7 @@ function processLogin(err, rtn, res) {
                 isSuccess: true,
                 message: 'Success',
                 id: userId,
-                name: name,
+                name: Name,
                 email: userEmail,
                 image: urlImage,
                 roles: roleArr,

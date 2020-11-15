@@ -22,7 +22,8 @@ exports.loginUser = function (email, password, role, res, callback) {
         + " INNER JOIN " + TableUsersRole + " as b on a.id = b.userId "
         + " INNER JOIN " + TableRoles + " as c on b.roleId = c.id "
         + " WHERE a.email = '" + email + "' AND a.password = '" + password + "' "
-        + " AND a.isactive = true ";
+        + " AND a.isactive = 1 ";
+        
     if (role != "") {
         que += " AND c.name = '" + role + "'";
     }
