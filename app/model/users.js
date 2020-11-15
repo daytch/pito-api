@@ -38,8 +38,8 @@ exports.loginUser = function(email, password, role, res, callback){
 };
 
 exports.registerUser = function(param, callback){
-    var que = "INSERT INTO " + TableUsers + " (email,email,password,name) ";
-        que += "VALUES ('" + param.email + "','" + param.email + "','" + param.password + "',";
+    var que = "INSERT INTO " + TableUsers + " (username,email,password,name) ";
+        que += "VALUES ('" + param.username + "','" + param.email + "','" + param.password + "',";
         que += "'" + param.name + "')";
     
     dbmysql.query(que, function(error,rows,fields){
