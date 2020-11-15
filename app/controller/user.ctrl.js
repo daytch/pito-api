@@ -8,19 +8,19 @@ const { user } = require("../config/db.config");
 exports.loginUser = async(param, res) => {
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
     var req = param.body;
-    await users.loginUser(req.username, req.password, "", res, processLogin);
+    await users.loginUser(req.email, req.password, "", res, processLogin);
 };
 
 exports.loginMerchant = async(param, res) => {
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
     var req = param.body;
-    await users.loginUser(req.username, req.password, "Merchant", res, processLogin);
+    await users.loginUser(req.email, req.password, "Merchant", res, processLogin);
 };
 
 exports.loginAdmin = async(param, res) => {
     // res.json({message : 'halo ' + req.username + ', pass ' + req.password});
     var req = param.body;
-    await users.loginUser(req.username, req.password, "Admin", res, processLogin);
+    await users.loginUser(req.email, req.password, "Admin", res, processLogin);
 };
 
 exports.registerUser = async(param, res) => {
@@ -30,7 +30,7 @@ exports.registerUser = async(param, res) => {
             if(rtn.affectedRows > 0){
                 // Sukses
                 var prm = {
-                    username : req.username
+                    email : req.email
                 };
                 var usr = await users.getAllRecord(prm);
                 var id_user = "";
